@@ -42,6 +42,11 @@
                 <? endif; ?>
             </ul>
             <p><?= $model->description_short; ?></p>
+            <?
+            $shopProduct = \skeeks\cms\shop\models\ShopProduct::getInstanceByContentElement($model);
+            $price = \Yii::$app->money->convertAndFormat($shopProduct->baseProductPrice->money);
+            ?>
+            <p class="price">Цена <?=$price?></p>
 
             <p><a href="<?= $model->url; ?>" data-pjax="0" class="btn btn-primary">Подробнее</a></p>
         </div>

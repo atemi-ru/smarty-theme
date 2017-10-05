@@ -6,6 +6,7 @@
  * @date 06.03.2015
  */
 /* @var $this \yii\web\View */
+use \yii\helpers\Url;
 ?>
 
 <? /*= $this->render('@template/include/breadcrumbs', [
@@ -17,17 +18,37 @@
             <div class="col-md-12">
                 <? \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 searcher">
                         <form action="/search" method="get" data-pjax="true">
                             <div class="input-group animated fadeInDown">
-                                <input type="text" name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
-                                       class="form-control" placeholder="Поиск"
-                                       value="<?= \Yii::$app->cmsSearch->searchQuery; ?>">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button"
-                                                onclick="$('.search-open form').submit(); return false;">Искать
-                                        </button>
-                                    </span>
+                                <?= \yii\jui\AutoComplete::widget([
+                                    'name' => \Yii::$app->cmsSearch->searchQueryParamName,
+                                    'value' => \Yii::$app->cmsSearch->searchQuery,
+                                    'options' => [
+                                        'placeholder' => 'Поиск',
+                                        'class' => 'form-control',
+                                    ],
+                                    'clientOptions' => [
+                                        'dataType'=>'json',
+                                        'autoFill'=>true,
+                                        'minLength'=>'0',
+                                        'source' => Url::to(['/search/autocomplete']),
+                                        'select' =>new \yii\web\JsExpression("function(event, ui) {
+                                                window.location = ui.item.url;
+                                            }"),
+                                        'success'=>new \yii\web\JsExpression("function (data) {
+                                                response($.map(data, function (item) {
+                                                    console.log(item.name);
+                                                    return item.name;
+                                                }))
+                                            }"),
+                                    ]
+                                ]); ?>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button"
+                                            onclick="$('.search form').submit(); return false;">Искать
+                                    </button>
+                                </span>
                             </div>
                         </form>
                     </div>
