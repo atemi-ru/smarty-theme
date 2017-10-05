@@ -124,7 +124,7 @@ HTML
 <!-- /FOOTER -->
 <div style="display: none;">
     <?= \Yii::$app->seo->countersContent; ?>
-    <div id="sx-callback" style="width: 600px;">
+    <div id="sx-callback">
         <h2>Обратный звонок</h2>
 
         <p>Оставьте ваш номер телефона и мы вам перезвоним.</p>
