@@ -29,7 +29,14 @@ $this->registerJs(<<<JS
          $(".recomend-slider").owlCarousel({
 			items:4,
 			loop:true,
-			nav:true 
+			nav:true ,
+			responsive : {
+			 
+			0 : {
+			 nav:true,
+dots:true			 
+				}
+			}
 		 });
     });
 
@@ -82,58 +89,7 @@ JS
         </div>
     </div>
 </section>
-<section class="padding-top-40 padding-bottom-60" style="border: none;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="size-30 margin-bottom-20">Бренды</h1>
-                <hr/>
-                <div style="text-align: center">
-                    <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-                        'namespace' => 'ContentElementsCmsWidget-home-brands',
-                        'viewFile' => '@app/views/widgets/ContentElementsCmsWidget/brands-home',
-                        'limit' => 20,
-                    ]); ?>
-                    <!--<img src="/img/brands.png" class="img-responsive"/>-->
-                </div>
-                <hr/>
-            </div>
-        </div>
-    </div>
-</section>
-<!--<section class="padding-top-20 padding-bottom-0">
 
-	<div class="container">
-
-
-
-		<div class="row">
-
-
-
-
-
-			<div class="col-md-12">
-
-				<? /*= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
-
-					'namespace' => 'ContentElementsCmsWidget-home-page2',
-
-					'viewFile' 	=> '@app/views/widgets/ContentElementsCmsWidget/products-home',
-
-				]); */ ?>
-
-
-
-			</div>
-
-		</div>
-
-
-
-	</div>
-
-</section>-->
 <? if ($model->description_full) : ?>
     <section class="padding-top-20">
         <div class="container">
