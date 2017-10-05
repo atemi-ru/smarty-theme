@@ -9,9 +9,9 @@
 /*
 */
 ?>
-<div class="container">
+<div class="container header-contacts">
     <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-9">
+        <div class="col-md-4  hidden-xs hidden-sm">
             <div class="sx-top-logo-block">
                 <a href="<?= \yii\helpers\Url::home(); ?>">
                     <?= \skeeks\cms\cmsWidgets\text\TextCmsWidget::widget([
@@ -25,8 +25,8 @@ HTML
                 </a>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="sx-top-phone">
+        <div class="col-md-4 col-sm-6">
+            <div class="sx-top-phone" style="font-size: 16px; padding-top: 20px; text-align: center;">
                 <i class="fa fa-phone"></i>
                 <?= \skeeks\cms\cmsWidgets\text\TextCmsWidget::widget([
                     'namespace' => 'header-phones',
@@ -42,7 +42,7 @@ HTML
                     обратный звонок</a>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 hidden-xs" style="text-align: right;">
+        <div class="col-md-4 col-sm-6 hidden-xs " style="text-align: right;">
             <div style="padding-top: 35px">
                 <? if (\Yii::$app->user->isGuest) : ?>
                     <a href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login')->setCurrentRef(); ?>">
@@ -60,7 +60,6 @@ HTML
 <!--
 
     AVAILABLE HEADER CLASSES
-
 
 
     Default nav height: 96px
@@ -112,28 +111,54 @@ HTML
     <!-- TOP NAV -->
     <header id="topNav">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class=" sx-menu-bg">
-                        <!-- Mobile Menu Button -->
-                        <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <!-- BUTTONS -->
-                        <ul class="pull-right nav nav-pills nav-second-main">
-                            <!-- SEARCH -->
-                            <li class="search">
-                                <a href="javascript:">
-                                    <i class="fa fa-search"></i>
-                                </a>
+			<div class="sx-menu-bg">
+
+				<div class="row">
+
+					<div class="col-md-12 col-xs-12 clearfix">
+						<div class="sx-top-logo-block pull-left visible-xs visible-sm">
+							<a href="<?= \yii\helpers\Url::home(); ?>">
+								<?= \skeeks\cms\cmsWidgets\text\TextCmsWidget::widget([
+									'namespace'         => 'logo-block',
+									'text'              => <<<HTML
+									
+									<img src="<?= \frontend\assets\AppAsset::getAssetUrl('img/logos/logo.png'); ?>" alt=""/>
+HTML
+									,
+									]); ?>
+
+							</a>
+						</div>
+						<div class="  ">
+							<!-- Mobile Menu Button -->
+							<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+								<i class="fa fa-bars"></i>
+							</button>
+							<!-- BUTTONS -->
+							<ul class="pull-right nav nav-pills nav-second-main">
+								<!-- SEARCH -->
+								<li class="user-menu visible-xs">
+
+										<? if (\Yii::$app->user->isGuest) : ?>
+										<a href="<?= \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login')->setCurrentRef(); ?>">
+											<i class="glyphicon glyphicon-log-in"></i> Вход
+										</a>
+										<? else : ?>
+										<a href="<?= \Yii::$app->user->identity->getPageUrl('edit'); ?>">
+											<i class="fa fa-user"></i>ЛК
+										</a>
+										<? endif; ?>
+
+								</li>
+								<li class="search">
+									<a href="javascript:">
+										<i class="fa fa-search"></i>
+									</a>
 
                                 <div class="search-box">
                                     <form action="/search" method="get">
                                         <div class="input-group">
-                                            <!--<input type="text" class="form-control"
-                                                   name="<?/*= \Yii::$app->cmsSearch->searchQueryParamName; */?>"
-                                                   placeholder="Поиск..."
-                                                   value="<?/*= \Yii::$app->cmsSearch->searchQuery; */?>"/>-->
+
 
                                             <?
 
@@ -181,23 +206,7 @@ HTML
                             ]) ?>
                         </ul>
                         <!-- /BUTTONS -->
-                        <!-- Logo -->
-                        <!--<a class="logo pull-left" href="/">
 
-                <img src="<? /*= \frontend\assets\AppAsset::getAssetUrl('img/logos/logo.png'); */ ?>" alt="" />
-
-            </a>-->
-                        <!--
-
-                            Top Nav
-
-
-
-                            AVAILABLE CLASSES:
-
-                            submenu-dark = dark sub menu
-
-                        -->
                         <div class="navbar-collapse pull-left nav-main-collapse collapse submenu-light">
                             <nav class="nav-main">
                                 <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
@@ -212,6 +221,7 @@ HTML
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </header>
     <!-- /Top Nav -->
