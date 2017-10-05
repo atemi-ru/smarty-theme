@@ -130,10 +130,40 @@ HTML
                                 <div class="search-box">
                                     <form action="/search" method="get">
                                         <div class="input-group">
-                                            <input type="text" class="form-control"
-                                                   name="<?= \Yii::$app->cmsSearch->searchQueryParamName; ?>"
+                                            <!--<input type="text" class="form-control"
+                                                   name="<?/*= \Yii::$app->cmsSearch->searchQueryParamName; */?>"
                                                    placeholder="Поиск..."
-                                                   value="<?= \Yii::$app->cmsSearch->searchQuery; ?>"/>
+                                                   value="<?/*= \Yii::$app->cmsSearch->searchQuery; */?>"/>-->
+
+                                            <?
+
+                    echo \yii\jui\AutoComplete::widget([
+    'name'  => \Yii::$app->cmsSearch->searchQueryParamName,
+    'value' => \Yii::$app->cmsSearch->searchQuery,
+    //'model'=>$searchModel,
+    //'attribute' => 'name',
+    'options' => [
+        'class' => 'form-control',
+        'type' => 'text',
+        'placeholder' => 'Поиск'
+    ],
+    'clientOptions' => [
+        'source' => \yii\helpers\Url::to(['/search/autocomplete']),
+        'dataType'=>'json',
+        'autoFill'=>true,
+        'minLength'=>'0',
+        'select' =>new \yii\web\JsExpression("function(event, ui) {
+            window.location = ui.item.url;
+        }"),
+        'success'=>new \yii\web\JsExpression("function (data) {
+            response($.map(data, function (item) {
+                console.log(item.name);
+                return item.name;
+            }))
+}"),
+        ],
+]);
+                                            ?>
 
                                 <span class="input-group-btn">
 
