@@ -62,7 +62,6 @@ HTML
     AVAILABLE HEADER CLASSES
 
 
-
     Default nav height: 96px
 
     .header-md 		= 70px nav height
