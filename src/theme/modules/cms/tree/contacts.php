@@ -31,7 +31,12 @@ CSS
         <div class="row">
             <!-- INFO -->
             <div class="col-md-6 col-sm-6">
-                <h2>Контакты</h2>
+
+
+                <?= \skeeks\cms\cmsWidgets\text\TextCmsWidget::widget([
+                    'namespace' => 'text-footer-left',
+                    'text' => <<<HTML
+                     <h2>Контакты</h2>
                 <hr/>
                 <p>
                     <span class="block"><strong><i class="fa fa-map-marker"></i> Адрес:</strong> Москва, Зеленоград, 2005-29</span>
@@ -40,6 +45,11 @@ CSS
                     <span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a
                             href="mailto:info@skeeks.com">info@skeeks.com</a></span>
                 </p>
+				
+HTML
+                    ,
+                ]); ?>
+
 
                 <div class="margin-top-20">
                     <a href="http://vk.com/skeeks_com" target="_blank"
