@@ -48,12 +48,43 @@ $items[] = [
 
 
 $models = \skeeks\cms\models\CmsTree::find()->where(['level' => 1])
-    //->andWhere(['active' => 'Y'])
+    ->andWhere(['active' => 'Y'])
     ->all();
 
 //$models = $widget->initActiveQuery()->level[1];
 //$models = [];
 //var_dump($models);
+
+class temp_menu_array
+{
+    function getChildren($model)
+    {
+        $tmpItems = [];
+        if ($model->children)
+        {
+            foreach ($model->children as $child)
+            {
+                if ($child->active = "Y")
+                {
+                    $tmp = new temp_menu_array;
+                    $tmpItems[] = $tmp->getChildren($child);
+                }
+            }
+        }
+
+        $data = [
+            'label' => $model->name,
+            'url' => $model->url,
+        ];
+
+        if ($tmpItems)
+        {
+            $data['items'] = $tmpItems;
+        }
+
+        return $items[] = $data;
+    }
+}
 
 if ($models)
 {
@@ -64,14 +95,15 @@ if ($models)
         {
             foreach ($model->children as $child)
             {
-                if ($child->active = "Y")
-                {
-                    $tmpItems[] = [
+               if ($child->active = "Y")
+               {
+                /*    $tmpItems[] = [
                         'label' => $child->name,
                         'url' => $child->url,
                     ];
-
-
+                */
+                 $tmp = new temp_menu_array;
+                 $tmpItems[] = $tmp->getChildren($child);
                 }
             }
         }
