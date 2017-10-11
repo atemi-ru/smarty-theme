@@ -131,8 +131,9 @@ HTML
 						</div>
 						<div class="  ">
 							<!-- Mobile Menu Button -->
-							<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-								<i class="fa fa-bars"></i>
+							<button class="btn btn-mobile" data-toggle="" data-target="">
+                                <a href="#sx-menu">
+                                    <i class="fa fa-bars"></i></a>
 							</button>
 							<!-- BUTTONS -->
 							<ul class="pull-right nav nav-pills nav-second-main">
@@ -213,16 +214,20 @@ HTML
                                     'namespace' => 'menu-top',
                                     'viewFile' => '@template/widgets/TreeMenuCmsWidget/menu-top.php',
                                     'label' => 'Верхнее меню',
-                                    'level' => '1',
+                                    'level' => '2',
                                     'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
                                 ]); ?>
+
                             </nav>
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
         </div>
+
     </header>
     <!-- /Top Nav -->
 </div>
