@@ -31,8 +31,7 @@ $model->name = $model->name . " ({$model->relatedPropertiesModel->getSmartAttrib
             <!-- /product image(s) -->
             <!-- hover buttons -->
             <div class="shop-option-over">
-                <!-- replace data-item-id width the real item ID - used by js/view/demo.shop.js -->
-                <a class="btn btn-default" data-pjax="0" href="<?= $model->url; ?>"><i
+                <a class="btn btn-default" data-pjax="0" href="#" onclick="sx.Shop.addProduct(<?=$model->id?>, 1); return false;"><i
                         class="fa fa-cart-plus size-20"></i></a>
             </div>
             <!-- /hover buttons -->

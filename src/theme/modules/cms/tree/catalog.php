@@ -188,7 +188,7 @@ JS
                 </div>
             </div>
             <!-- LEFT -->
-            <div class="col-lg-3 col-md-3 col-sm-3 col-lg-pull-9 col-md-pull-9 col-sm-pull-9 "
+            <div class="col-lg-3 col-md-3 col-sm-3 col-lg-pull-9 col-md-pull-9 col-sm-pull-9"
                  style="border: 1px solid rgba(192, 192, 192, 0.35);">
                 <!-- CATEGORIES -->
                 <div class="side-nav  margin-bottom-20 margin-top-20">

@@ -25,9 +25,9 @@
     </div>
     <div class="col-sm-8 news-v3">
         <div class="news-v3-in-sm no-padding">
-            <h2>
+            <span>
                 <a href="<?= $model->url; ?>" title="<?= $model->name; ?>" data-pjax="0"><?= $model->name; ?></a>
-            </h2>
+            </span>
             <ul class="list-inline posted-info">
                 <? /* if ($model->createdBy) : */ ?><!--
                     <li>Добавил: <a href="<? /*= $model->createdBy->getPageUrl(); */ ?>" title="<? /*= $model->createdBy->name; */ ?>"><? /*= $model->createdBy->name; */ ?></a></li>
