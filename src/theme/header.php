@@ -214,7 +214,7 @@ HTML
                                     'namespace' => 'menu-top',
                                     'viewFile' => '@template/widgets/TreeMenuCmsWidget/menu-top.php',
                                     'label' => 'Верхнее меню',
-                                    'level' => '2',
+                                    'level' => '3',
                                     'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
                                 ]); ?>
 
