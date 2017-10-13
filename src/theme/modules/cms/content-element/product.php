@@ -525,7 +525,6 @@ JS
                         $query->with('shopProduct.minProductPrice');
                         $query->andWhere(['vp.shop_fuser_id' => \Yii::$app->shop->shopFuser->id]);
                         $query->orderBy(['vp.created_at' => SORT_DESC]);
-
                     }
                 ]); ?>
             </div>

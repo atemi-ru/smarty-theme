@@ -48,7 +48,7 @@ HTML
                     ,
                 ]); ?>
             </div>
-            <div class="col-md-3 col-xs-6">
+            <div class="col-md-3 hidden-xs">
                 <? /*= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
 					'namespace'         => 'ContentElementsCmsWidget-footer',
 					'viewFile'          => '@template/widgets/ContentElementsCmsWidget/articles-footer',
@@ -64,7 +64,7 @@ HTML
                     'level' => '1',
                 ]); ?>
             </div>
-            <div class="col-md-2 col-xs-6">
+            <div class="col-md-2 hidden-xs">
                 <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
                     'namespace' => 'menu-footer-2',
                     'viewFile' => '@template/widgets/TreeMenuCmsWidget/menu-footer.php',

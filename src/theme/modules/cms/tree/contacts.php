@@ -80,7 +80,6 @@ HTML
             </div>
             <!-- /INFO -->
             <div class="col-md-6 col-sm-6">
-                <?= $model->description_full; ?>
                 <h2>Обратная связь</h2>
                 <hr/>
                 <?= \skeeks\modules\cms\form2\cmsWidgets\form2\FormWidget::widget([
