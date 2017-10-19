@@ -6,7 +6,7 @@
  * @date 09.10.2015
  */
 ?>
-
+<?/* Убираем купоны
 <!-- TOGGLE -->
 <div class="toggle-transparent toggle-bordered-full clearfix">
 
@@ -21,6 +21,7 @@
 
 </div>
 <!-- /TOGGLE -->
+*/?>
 
 <div class="toggle-transparent toggle-bordered-full clearfix">
     <div class="toggle active" style="display: block;">

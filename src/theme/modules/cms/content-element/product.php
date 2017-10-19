@@ -305,11 +305,11 @@ JS
                             <? endif; ?>
                         </div>
                         <!-- /price -->
-                        <hr>
+                        <hr class="hidden-xs">
                         <div class="clearfix margin-bottom-30">
                             <? if ($model->description_short) : ?>
                                 <p><?= $model->description_short; ?></p>
-                                <hr/>
+                                <hr class="hidden-xs">
                             <? endif; ?>
 
 
@@ -352,7 +352,7 @@ JS
                             }
                             ?>
                         </div>
-                        <hr>
+                        <hr class="hidden-xs">
                         <? if ($shopCmsContentElement->shopProduct->product_type == \skeeks\cms\shop\models\ShopProduct::TYPE_OFFERS) : ?>
                             <form class="offers-form form" data-pjax>
                                 <label>Размер и цвет: </label>
@@ -383,9 +383,9 @@ JS
                                     <a class="btn btn-default btn-primary product-add-cart noradius" href="#"
                                        onclick="sx.Shop.addProduct($('#sx-offer').val(), 1); return false;"><i
                                             class="fa fa-cart-plus"></i> В корзину</a>
-                                    <br/>
+                                    <br class="hidden-xs">
                                     <p><a href="/size" target="_blank" data-pjax="0">Как выбрать размер?</a></p>
-                                    <br/>
+                                    <br class="hidden-xs">
                                 <? else: ?>
                                     <p style="color:red;">Товара нет в наличии</p>
                                 <? endif; ?>
@@ -393,7 +393,7 @@ JS
                         <? else : ?>
                             <a class="btn btn-default btn-primary btn-lg product-add-cart noradius" href="#"
                                onclick="sx.Shop.addProduct(<?= $model->id; ?>, 1); return false;"><i
-                                    class="fa fa-cart-plus"></i> В корзину</a><br/><br/>
+                                    class="fa fa-cart-plus"></i> В корзину</a><br class="hidden-xs"><br class="hidden-xs">
                         <? endif; ?>
                         <!--<hr>
 
@@ -444,7 +444,7 @@ JS
                             */ ?>
 
                         </div>-->
-                        <hr>
+                        <hr class="hidden-xs">
                         <!-- Share -->
                         <div class="pull-right">
                             <?
@@ -479,13 +479,13 @@ JS
                     </div>
                     <!-- /ITEM DESC -->
                 </div>
-                <hr>
+                <hr class="hidden-xs">
                 <?= \skeeks\cms\reviews2\widgets\reviews2\Reviews2Widget::widget([
                     'viewFile'                  => '@app/views/widgets/Reviews2Widget/package',
                     'namespace'                 => 'Reviews2Widget-product',
                     'cmsContentElement'         => $model,
                 ]); ?>
-                <hr>
+                <hr class="hidden-xs">
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
                     'namespace' => 'ContentElementsCmsWidget-sameProducts',
@@ -504,7 +504,7 @@ JS
                         //$query->with('shopProduct.baseProductPrice');
                     }
                 ]); ?>
-                <hr/>
+                <hr class="hidden-xs">
                 <?= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
                     'contentElementClass' => \skeeks\cms\shop\models\ShopCmsContentElement::className(),
                     'namespace' => 'ContentElementsCmsWidget-VisitedProducts',
@@ -525,7 +525,6 @@ JS
                         $query->with('shopProduct.minProductPrice');
                         $query->andWhere(['vp.shop_fuser_id' => \Yii::$app->shop->shopFuser->id]);
                         $query->orderBy(['vp.created_at' => SORT_DESC]);
-
                     }
                 ]); ?>
             </div>
