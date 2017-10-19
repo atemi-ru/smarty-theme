@@ -23,7 +23,7 @@ CSS
 <section style="padding: 0px;">
     <script type="text/javascript" charset="utf-8"
             src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=9Hjh5JL00DPjUGMPbkmlOUj4vBHFOJ1X&width=100%&height=400px&lang=ru_RU&sourceType=constructor"></script>
-    <div class="container">
+    <div class="container cts">
         <p></p>
 
         <p></p>
