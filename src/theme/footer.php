@@ -11,7 +11,7 @@
 <footer id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-xs-12">
+            <div class="col-md-3 col-xs-12 footer-col">
                 <?= \skeeks\cms\cmsWidgets\text\TextCmsWidget::widget([
                     'namespace' => 'text-footer-left',
                     'text' => <<<HTML
@@ -48,7 +48,7 @@ HTML
                     ,
                 ]); ?>
             </div>
-            <div class="col-md-3 hidden-xs">
+            <div class="col-md-3 col-sm-12  footer-col hidden-xs">
                 <? /*= \skeeks\cms\cmsWidgets\contentElements\ContentElementsCmsWidget::widget([
 					'namespace'         => 'ContentElementsCmsWidget-footer',
 					'viewFile'          => '@template/widgets/ContentElementsCmsWidget/articles-footer',
@@ -64,7 +64,7 @@ HTML
                     'level' => '1',
                 ]); ?>
             </div>
-            <div class="col-md-2 hidden-xs">
+            <div class="col-md-2  col-sm-12  footer-col hidden-xs">
                 <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
                     'namespace' => 'menu-footer-2',
                     'viewFile' => '@template/widgets/TreeMenuCmsWidget/menu-footer.php',
@@ -72,7 +72,7 @@ HTML
                     'level' => '1',
                 ]); ?>
             </div>
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-4 col-xs-12  footer-col">
                 <h4 class="letter-spacing-1">Обратная связь</h4>
 
                 <div class="sx-feedback-wrapper" id="sx-feedback">
@@ -135,6 +135,3 @@ HTML
         ]) ?>
     </div>
 </div>
-
-
-
