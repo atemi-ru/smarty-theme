@@ -9,25 +9,8 @@
 /* @var $widget \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget */
 /* @var $trees  \skeeks\cms\models\Tree[] */
 ?>
-<?
-$this->registerJs(<<<JS
 
-//inner-wrapper scrollbar-macosx scroll-content scroll-scrollx_visible scroll-scrolly_visible
-
-$(document).ready(function() {
-    
-    var API = $("#sx-menu").data( "mmenu" );
-
-    $(".btn-mobile").click(function() {
-        API.open();
-    });
-});
-
-JS
-);
-
-?>
-<ul id="topMain" class="nav nav-pills nav-main sx-top-menu">
+<ul id="topMain" class="nav nav-pills nav-main">
 
 <? if ($trees = $widget->activeQuery->all()) : ?>
 <? foreach ($trees as $tree) : ?>
@@ -126,7 +109,7 @@ if ($models)
 
 
 <?= \wbraganca\mmenu\Menu::widget([
-    'id'    => 'sx-menu',
+    'id'    => 'mobile-menu',
     'clientOptions'    => [
         'pageScroll'    => true,
         'navbar'    => [
