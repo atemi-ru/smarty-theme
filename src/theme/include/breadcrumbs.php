@@ -33,13 +33,26 @@ if (!@$title) {
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <h1><?= $title; ?></h1>
+
+                <?php
+                /**
+                 * выводим доп меню для мобильных экранов
+                 */
+                if (Yii::$app->request->url == '/catalog') :?>
+
+                    <div class="mobile-menu visible-xs">
+                    <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
+                        'namespace' => 'mobile_menu',
+                        'viewFile' => '@template/widgets/TreeMenuCmsWidget/mobile-menu.php',
+                        'label' => 'Мобильное меню',
+                        'level' => '2',
+                        'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
+                    ]); ?>
+                    </div>
+            <? endif;  ?>
+
             </div>
-            <!-- breadcrumbs -->
-            <!--<ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
-                <li class="active">Blank Page</li>
-            </ol>--><!-- /breadcrumbs -->
+
             <div class="col-lg-6 col-md-6 breadCr hidden-sm hidden-xs">
                 <?= \skeeks\cms\cmsWidgets\breadcrumbs\BreadcrumbsCmsWidget::widget([
                     'viewFile' => '@template/widgets/BreadcrumbsCmsWidget/default',
