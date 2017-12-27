@@ -38,18 +38,24 @@ if (!@$title) {
                 /**
                  * выводим доп меню для мобильных экранов
                  */
-                if (Yii::$app->request->url == '/catalog') :?>
+                $level = null;
+                if (Yii::$app->request->url == '/catalog') {
+                    $level = 1;
+                } elseif (Yii::$app->request->url = '/catalog/') {
+                    $level = 2;
+                }
+                if ($level != null) :?>
 
                     <div class="mobile-menu visible-xs">
                     <?= \skeeks\cms\cmsWidgets\treeMenu\TreeMenuCmsWidget::widget([
                         'namespace' => 'mobile_menu',
                         'viewFile' => '@template/widgets/TreeMenuCmsWidget/mobile-menu.php',
                         'label' => 'Мобильное меню',
-                        'level' => '2',
+                        'level' => $level,
                         'enabledRunCache' => \skeeks\cms\components\Cms::BOOL_N,
                     ]); ?>
                     </div>
-            <? endif;  ?>
+                <? endif;  ?>
 
             </div>
 
