@@ -107,7 +107,7 @@ CSS
         <div class="container">
             <ul class="pull-right nomargin list-inline mobile-block">
                 <li><a href="//rusoft.ru" title="Русофт">Разработка сайта</a>
-                    <img src="/img/rusoft_logo.png" alt="Разработка сайта — RUsoft.ru"> — RuSoft.ru
+                    <img src="<?= \atemi\themes\smarty\assets\AppAsset::getAssetUrl('img/rusoft_logo.png')?>" alt="Разработка сайта — RUsoft.ru"> — RuSoft.ru
 
                 </li>
             </ul>
