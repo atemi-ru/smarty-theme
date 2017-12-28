@@ -5,7 +5,7 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 06.03.2015
  */
-use frontend\assets\AppAsset;
+use atemi\themes\smarty\assets\AppAsset;
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */

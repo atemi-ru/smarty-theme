@@ -26,6 +26,6 @@ class ZoomSmartyAsset extends SmartyAsset
     ];
 
     public $depends = [
-        '\frontend\assets\AppAsset',
+        'atemi\themes\smarty\assets\AppAsset',
     ];
 }
