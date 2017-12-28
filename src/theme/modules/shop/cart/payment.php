@@ -18,7 +18,7 @@ if (!\Yii::$app->shop->shopFuser->buyer)
 ]) ?>
 
 <?
-\frontend\assets\CartAsset::register($this);
+\atemi\themes\smarty\assets\CartAsset::register($this);
 \skeeks\cms\shop\widgets\ShopGlobalWidget::widget();
 
 $this->registerJs(<<<JS

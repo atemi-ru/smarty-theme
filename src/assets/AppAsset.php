@@ -22,15 +22,17 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@atemi/themes/smarty/assets/src';
 
     public $css = [
+        'css/jquery.fancybox.css',
         'https://fonts.googleapis.com/css?family=Open+Sans',
         'css/animate.css',
-		 'css/green.css',
+        'css/green.css',
         'css/fast.css',
         'css/media.css',
     ];
 
     public $js = [
         'smarty/js/scripts.js',
+        'js/jquery.fancybox.js',
         'js/app.js',
     ];
 
@@ -38,9 +40,9 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
         '\skeeks\sx\assets\Custom',
-        '\skeeks\cms\assets\FancyboxAssets',
-        '\skeeks\cms\assets\FancyboxThumbsAssets',
-        '\frontend\assets\SmartyThemeAsset',
+        /*'\skeeks\cms\assets\FancyboxAssets',
+        '\skeeks\cms\assets\FancyboxThumbsAssets',*/
+        '\atemi\themes\smarty\assets\SmartyThemeAsset',
         '\skeeks\cms\modules\admin\assets\JqueryScrollbarAsset',
     ];
 

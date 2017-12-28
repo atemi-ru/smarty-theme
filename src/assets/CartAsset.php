@@ -13,12 +13,14 @@ namespace atemi\themes\smarty\assets;
  */
 class CartAsset extends AppAsset
 {
+    public $sourcePath = '@atemi/themes/smarty/assets/src';
+
     public $css = [];
     public $js = [
         'js/classes/Shop.js',
     ];
     public $depends = [
-        '\frontend\assets\AppAsset',
+        '\atemi\themes\smarty\assets\AppAsset',
         '\skeeks\cms\shop\assets\ShopAsset',
     ];
 }

@@ -17,7 +17,7 @@
                 <? foreach($model->files as $file) : ?>
                     <li>
                         <img src="<?= \skeeks\cms\assets\CmsAsset::getAssetUrl('/img/icons/file.png'); ?>" />
-                     <?/*   <img src="<?= \frontend\assets\TmplAsset::getAssetUrl('images/icons/file.png'); ?>" alt="<?= $file->name ?>" width="32"> */?>
+                     <?/*   <img src="<?= \atemi\themes\smarty\assets\TmplAsset::getAssetUrl('images/icons/file.png'); ?>" alt="<?= $file->name ?>" width="32"> */?>
                         <a href="<?= \skeeks\cms\helpers\Image::getSrc($file->src); ?>" class=""><?= $file->name ?></a>
                     </li>
                 <? endforeach; ?>
