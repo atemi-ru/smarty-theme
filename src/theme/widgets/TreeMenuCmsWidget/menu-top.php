@@ -124,7 +124,7 @@ if ($models)
 ?>
     <div style="display: none;">
 
-<?= \wbraganca\mmenu\Menu::widget([
+<?= \skeeks\yii2\mmenu\Menu::widget([
     'id'    => 'sx-menu',
     'clientOptions'    => [
         'pageScroll'    => true,
