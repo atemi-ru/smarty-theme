@@ -6,7 +6,12 @@
 $hasChildrens = $model->children;
 
 // Чтобы не выводить лишнего
-$current_id = (\Yii::$app->cms->getCurrentTree()->id);
+
+if (isset(\Yii::$app->cms->currentTree) && \Yii::$app->cms->currentTree ) {
+    $current_id = \Yii::$app->cms->getCurrentTree()->id;
+} else {
+    $current_id = '';
+}
 
 
 ?>
