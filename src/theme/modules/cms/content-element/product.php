@@ -9,9 +9,9 @@
 /* @var $model \skeeks\cms\models\CmsContentElement */
 
 use \yii\helpers\Html;
-\frontend\assets\OwnCarouselAsset::register($this);
-\frontend\assets\ZoomAsset::register($this);
-\frontend\assets\LightBoxAsset::register($this);
+\atemi\themes\smarty\assets\OwnCarouselAsset::register($this);
+\atemi\themes\smarty\assets\ZoomAsset::register($this);
+\atemi\themes\smarty\assets\LightBoxAsset::register($this);
 \Yii::$app->cmsToolbar->editUrl = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/shop/admin-cms-content-element/update', 'pk' => $model->id])
     ->enableEmptyLayout()->url;
 $this->registerJs(<<<JS

@@ -43,7 +43,7 @@ dots:true
 JS
 );
 
-\frontend\assets\OwnCarouselAsset::register($this); //подключаем чтобы не ломалась верстка если убрать слайдер с брендами
+\atemi\themes\smarty\assets\OwnCarouselAsset::register($this); //подключаем чтобы не ломалась верстка если убрать слайдер с брендами
 $this->registerJs(<<<JS
 
 new sx.classes.OwnCarousel({

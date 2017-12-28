@@ -7,9 +7,9 @@
  */
 /* @var $this \yii\web\View */
 /* @var $model \skeeks\cms\models\CmsContentElement */
-\frontend\assets\OwnCarouselAsset::register($this);
-\frontend\assets\ZoomAsset::register($this);
-\frontend\assets\LightBoxAsset::register($this);
+\atemi\themes\smarty\assets\OwnCarouselAsset::register($this);
+\atemi\themes\smarty\assets\ZoomAsset::register($this);
+\atemi\themes\smarty\assets\LightBoxAsset::register($this);
 $this->registerJs(<<<JS
 $(window).ready(function()
 {
