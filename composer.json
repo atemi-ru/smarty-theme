@@ -18,7 +18,7 @@
     ],
     "require": {
         "skeeks/cms": "~5.0.0 || dev-master",
-        "skeeks/yii2-template-smarty-asset": "1.1.5",
+        "skeeks/yii2-template-smarty-asset": "1.1.5"
     },
     "autoload": {
         "psr-4": {
